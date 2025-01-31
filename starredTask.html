@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const numbers = [];
+
+      console.log(numbers);
+      let i = 0;
+
+      let number = -10;
+      while (number <= 10) {
+        numbers[i] = number;
+        number++;
+        i++;
+      }
+      console.log(numbers);
+
+      let newIndex = 0;
+      for (let i = 0; i < numbers.length; i++) {
+        if (numbers[i] >= 0) {
+          numbers[newIndex] = numbers[i];
+          newIndex++;
+        }
+      }
+      numbers.length = newIndex;
+      console.log(numbers);
+
+      for (let i = 0; i < numbers.length; i++) {
+        numbers[i] *= numbers[i];
+      }
+      console.log(numbers);
+
+      for (let j = 0; j < numbers.length - 1; j++) {
+        for (let i = 0; i < numbers.length - 1; i++) {
+          if (numbers[i] < numbers[i + 1]) {
+            //[numbers[i], numbers[i + 1]] = [numbers[i + 1], numbers[i]];
+            let temp = numbers[i];
+            numbers[i] = numbers[i + 1];
+            numbers[i + 1] = temp;
+          }
+        }
+      }
+      console.log(numbers);
+      /*В последнем задании на сортировку, я самостоятельно не справилась,
+      в частности при попытке поменять элементы массива местами.
+      Пришлось обратится за помощью.
+      Узнала, что данный способ называется пузырьковой сортировкой.
+      А также, узнала, что благодаря деструктуризации, есть прекрасная и более
+      понятная запись, без создания переменной для временного хранения.
+      Спасибо, было очень познавательно*/
+    </script>
+  </body>
+</html>
